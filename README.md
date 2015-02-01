@@ -1,2 +1,2 @@
 # TestMessagesCommunicationWearPhone
-Basic test of message communication between an android wear and an android phone thanks to the GoogleApiClient.
+Basic test of messages communication between an android wear and an android phone thanks to the GoogleApiClient.
