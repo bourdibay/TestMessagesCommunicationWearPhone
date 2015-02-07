@@ -1,5 +1,8 @@
 package com.personal.bourdi_b.communicationlibrary;
 
+import android.os.Handler;
+import android.widget.Toast;
+
 import com.google.android.gms.wearable.WearableListenerService;
 
 /**
@@ -18,6 +21,16 @@ public class BaseListenerService extends WearableListenerService {
     public void onDestroy() {
         _messageSender.waitForAllThreadsToFinish();
         super.onDestroy();
+    }
+
+    protected void showToast(final String message) {
+        Handler mHandler = new Handler(getMainLooper());
+        mHandler.post(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 }
